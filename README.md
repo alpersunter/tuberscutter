@@ -30,7 +30,7 @@ At the moment, your go-to file is **firstprototype.py**. No fancy "run with comm
 ### Setting up
 There are 5 fields you can edit to your interest in **firstprototype.py**.
 
-`DEFAULT_DURATION = 0.3` units in seconds. Any silence shorter than $3/10$ of a second will not be marked as silent block.
+`DEFAULT_DURATION = 0.3` units in seconds. Any silence shorter than 3/10 of a second will not be marked as silent block.
 
 `DEFAULT_THRESHOLD = -60` units in dB. Anything louder than this will be marked as loud and vice versa.
 
