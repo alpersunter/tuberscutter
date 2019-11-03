@@ -3,6 +3,8 @@ Automatically seperate the silent parts from any video!
 
 Do You make video content for internet but don't want to bore people with long silences in your clip and find using an editing software to do it manually too time consuming? Then you share the same problem with me, and this project aims to help you.
 
+You can watch this video or keep reading: https://www.youtube.com/watch?v=ymVZHNEabow&feature=youtu.be
+
 ## What does it do to the video that I have gave it?
 There is only one threshold value for detecting silent parts. This means, the program will interpret your video as a collection of *Silent* and *Loud* sub videos. In this interpretation a video might look like as such 
 
