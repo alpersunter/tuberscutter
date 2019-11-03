@@ -71,4 +71,4 @@ Program should start doing its job. It will produce files in the same folder whe
 
 finally
 
-- Thank you for your interest. Bye!
+- Thank *you* for your interest. Bye!
