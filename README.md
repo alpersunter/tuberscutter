@@ -53,7 +53,9 @@ You need three piece of software to use this program.
 *ffmpeg-python*: ffmpeg itself is ugly, python itself is not designed specifically for editing. Python bindings for FFmpeg -> https://github.com/kkroening/ffmpeg-python
 
 make sure the "ffmpeg" and "python" are added to PATH
+
 https://www.thewindowsclub.com/how-to-install-ffmpeg-on-windows-10
+
 https://geek-university.com/python/add-python-to-the-windows-path/
 
 If everything is set, open the command prompt, [`cd`](https://www.wikiwand.com/en/Cd_(command)) to the directory which contains the *.py* file (and preferably your video file), type `python firstprototype.py`, hit return, YAY!
