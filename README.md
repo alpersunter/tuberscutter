@@ -38,7 +38,7 @@ There are 5 fields you can edit to your interest in **firstprototype.py**.
 determines output file type. Change *".mp4"* to *".mov"*; that will produce mov files instead of mp4 files.
 
 `split_video("F:\\test.mov","L")`
-*"F:\\test.mov"* is the file path to your full video. Make sure that you do not use *"F:\test.mov"* (single backslash); always use double backslash. For more info, Google "python escape sequences". Preferably, if you do not want to deal with the whole path of the full video; make sure you put *test.mov* and *firstprototype.py* in the same folder. This way instead of writing *"F:\\my\\complex\\folders\\test.mov"*, *"test.mov"* will be enough.
+*"F:\\\\test.mov"* is the file path to your full video. Make sure that you do not use *"F:\\test.mov"* (single backslash); always use double backslash. For more info, Google "python escape sequences". Preferably, if you do not want to deal with the whole path of the full video; make sure you put *test.mov* and *firstprototype.py* in the same folder. This way instead of writing *"F:\\\\my\\\\weird\\\\folders\\\\test.mov"*, *"test.mov"* will be enough.
 
 *"L"* is the common label for naming Loud output files. The output would look like this "L0.mp4, L1.mp4, L2.mp4, L3.mp4, ...". If you edit it to *"Loud Block-"* then output will have the shape "Loud Block-0.mp4, Loud Block-1.mp4, Loud Block-2.mp4, Loud Block-3.mp4, ...". 
 This program currently cannot output Silent parts so no customization for them.
