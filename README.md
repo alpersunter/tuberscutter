@@ -27,20 +27,24 @@ This program detects Loud and Silent blocks and exports them as a bunch of short
 Notice: Right now, it only exports Loud parts. I'll edit the code to achieve that, if you can do it, I would enjoy your contribution. 
 
 ## How to use it?
-At the moment, your go-to file is **firstprototype.py**. No fancy "run with command line arguments" magic. The program has a few parameters inside; you need to edit those first, then can simply do `python .\firstprototype.py`.
+At the moment, your go-to file is **cutter.py**. It has a few command line arguments.
 
-### Setting up
-There are 5 fields you can edit to your interest in **firstprototype.py**.
+`python cutter.py --file test.mp4 -f .mov -d 1 -t -27`
 
-`DEFAULT_DURATION = 0.3` units in seconds. Any silence shorter than 3/10 of a second will not be marked as silent block.
+`--file` is the input video; the video whose silent parts will be removed.
+`-f` is the format of the output files: L0.mov, L1.mov, ... (.mp4 by default)
+`-d` is the duration of the shortest detected silence. Unit in seconds. (0.3 sec by default.)
+`-t` is the noise threshold. (-60 dB by default)
 
-`DEFAULT_THRESHOLD = -60` units in dB. Anything louder than this will be marked as loud and vice versa.
+Currently the best arrangement of parameters for me is `-d 1 -t -27`. It could change depending on the video you have. So it is a little subjective at the moment. After implementing loudness normalization, it should be more or less usable by everyone.
 
-`out_filename = out_pattern + str(i) + ".mp4"` 
-determines output file type. Change *".mp4"* to *".mov"*; that will produce mov files instead of mp4 files.
+There are 4 fields you can edit to your interest in **cutter.py** but since the program supports command line arguments, you won't need most of them.
+
+`DEFAULT_DURATION = 0.3` units in seconds. Any silence shorter than 3/10 of a second will not be marked as silent block. (`-d`)
+
+`DEFAULT_THRESHOLD = -60` units in dB. Anything louder than this will be marked as loud and vice versa. (`-t`)
 
 `split_video("F:\\test.mov","L")`
-*"F:\\\\test.mov"* is the file path to your full video. Make sure that you do not use *"F:\\test.mov"* (single backslash); always use double backslash. For more info, Google "python escape sequences". Preferably, if you do not want to deal with the whole path of the full video; make sure you put *test.mov* and *firstprototype.py* in the same folder. This way instead of writing *"F:\\\\my\\\\weird\\\\folders\\\\test.mov"*, *"test.mov"* will be enough.
 
 *"L"* is the common label for naming Loud output files. The output would look like this "L0.mp4, L1.mp4, L2.mp4, L3.mp4, ...". If you edit it to *"Loud Block-"* then output will have the shape "Loud Block-0.mp4, Loud Block-1.mp4, Loud Block-2.mp4, Loud Block-3.mp4, ...". 
 This program currently cannot output Silent parts so no customization for them.
@@ -50,7 +54,7 @@ You need three piece of software to use this program.
 
 *ffmpeg*: a general purpose video and audio manipulation software running from command line-> https://ffmpeg.org/
 
-*python*: the interpreter for our "firstprototype.py" file -> https://www.python.org/
+*python*: the interpreter for our "cutter.py" file -> https://www.python.org/
 
 *ffmpeg-python*: ffmpeg itself is ugly, python itself is not designed specifically for editing. Python bindings for FFmpeg -> https://github.com/kkroening/ffmpeg-python
 
