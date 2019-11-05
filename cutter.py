@@ -82,6 +82,7 @@ def split_video(in_filename, out_pattern, silence_threshold=DEFAULT_THRESHOLD, s
     audioStream = originalStream.audio
 
     chunk_times = get_chunk_times(audioStream, silence_threshold, silence_duration)
+    l = len(chunk_times)
     print("Chunk times are OK!")
     for i, (start_time, end_time) in enumerate(chunk_times):
         time = end_time - start_time
