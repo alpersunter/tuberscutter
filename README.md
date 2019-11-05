@@ -32,8 +32,11 @@ At the moment, your go-to file is **cutter.py**. It has a few command line argum
 `python cutter.py --file test.mp4 -f .mov -d 1 -t -27`
 
 `--file` is the input video; the video whose silent parts will be removed.
+
 `-f` is the format of the output files: L0.mov, L1.mov, ... (.mp4 by default)
+
 `-d` is the duration of the shortest detected silence. Unit in seconds. (0.3 sec by default.)
+
 `-t` is the noise threshold. (-60 dB by default)
 
 Currently the best arrangement of parameters for me is `-d 1 -t -27`. It could change depending on the video you have. So it is a little subjective at the moment. After implementing loudness normalization, it should be more or less usable by everyone.
