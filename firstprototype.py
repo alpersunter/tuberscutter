@@ -85,11 +85,16 @@ def split_video(in_filename, out_pattern, silence_threshold=DEFAULT_THRESHOLD, s
     print("Chunk times are OK!")
     for i, (start_time, end_time) in enumerate(chunk_times):
         time = end_time - start_time
+        if time <= 0.2:
+            continue
+
         out_filename = out_pattern + str(i) + args.f
         #_makedirs(os.path.dirname(out_filename))
         # splitting:
         with subprocess.Popen(   (ffmpeg.input(in_filename, ss=start_time, t=time).output(out_filename).overwrite_output().compile())    ) as proc:
             proc.wait()
-        print(str(i) + "is done")
+        print(str(i) + " out of "+ str(l) +" is done")
+
 
 split_video(args.file,"L")
+
