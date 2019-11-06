@@ -1,6 +1,8 @@
 # tuberscutter
 Automatically seperate the silent parts from any video!
 
+![TubersCutter](tuberscutter_logo.png)
+
 Do You make video content for internet but don't want to bore people with long silences in your clip and find using an editing software to do it manually too time consuming? Then you share the same problem with me, and this project aims to help you.
 
 ## What does it do to the video that I have gave it?
